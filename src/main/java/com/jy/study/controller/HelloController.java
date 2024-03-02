@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("/api/test")
     public String hello() {
-        return "리엑트 리턴 테스트.";
+        return "리엑트 리턴 테스트!!!";
     }
 
 }
