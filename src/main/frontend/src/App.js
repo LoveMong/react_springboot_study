@@ -1,23 +1,19 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Navbar from'./components/Navbar';
 
 function App() {
 
-  const [hello, setHello] = useState('');
 
-  useEffect(() => {
-    axios.get('/api/test')
-        .then((res) => {
-            setHello(res.data);
-        })
-  }, []);
-
-  return (
-    <div className="App">
-      백엔드 데이터 : {hello}
-    </div>
-  );
+    return (
+        <>
+            <Router>
+                <Navbar />
+                <Routes>
+                    <Route path='/' exact />
+                </Routes>
+            </Router>
+        </>
+    );
 }
-
 export default App;
