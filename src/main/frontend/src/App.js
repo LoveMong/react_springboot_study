@@ -10,7 +10,7 @@ function App() {
     return (
       <BrowserRouter>
           <div>
-              <header />
+              <Header />
               <Nav />
               <Routes>
                   <Route path="/" element={<Main />}/>
