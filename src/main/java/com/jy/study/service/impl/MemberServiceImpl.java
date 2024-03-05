@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemberServiceImpl implements MemberService {
     @Override
-    public int hasMemberId(String id) {
+    public int hasMemberId(String memberId) {
         return 0;
     }
 }
