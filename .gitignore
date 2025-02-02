@@ -107,3 +107,41 @@ gradle-app.setting
 .application-security.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,react,java,gradle
+
+### IntelliJ IDEA ###
+out
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/**/shelf
+.idea/**/xml/
+.idea/modules/
+.idea/artifacts
+
+# AWS settings
+.idea/aws.xml
+
+# Gradle/Rebuild 관련 캐시:
+.idea/.idea_modules.xml
+
+# Project and module files:
+*.iml
+modules.xml
+.idea/**/modules.xml
+
+# Other:
+.idea/vcs.xml
+.idea/**/assetWizard.xml
+
+# Volatile files for plugin development in IntelliJ
+.idea_plugin
+.idea_updated
+
+# Avoid indexing these paths
+.idea && Lib
+
+# Gradle wrapper jar in IntelliJ setup if not necessary:
+.gradle
+.idea/directory
