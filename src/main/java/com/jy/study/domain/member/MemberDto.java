@@ -1,10 +1,10 @@
-package com.jy.study.domain.memeber;
+package com.jy.study.domain.member;
 
 
 import lombok.Data;
 
 @Data
-public class MemeberDto {
+public class MemberDto {
 
     private String id;
     private String name;

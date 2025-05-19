@@ -51,24 +51,30 @@ const Signup = () => {
     }
 
     const idCheckHandler = async (id) => {
-        const idRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (id === '') {
             setIdError('아이디를 입력해주세요.');
             setIsIdAvailable(false);
             return false;
-        } else if (!idRegex.test(id)) {
-            setIdError('아이디는 5~10자의 영소문자, 숫자만 입력 가능합니다.');
+        } else if (!emailRegex.test(id)) {
+            setIdError('이메일을 다시 입력해주세요.');
             setIsIdAvailable(false);
             return false;
         }
         try {
-            const responseData = await axios
-                .post("http://localhost:8080/member/duplicate",{
-                    memberId : id
-            }).then((res) => {
-                console.log(res);
-            })
-
+            const responseData = await axios.post(
+                "http://localhost:8080/member/duplicate",
+                {
+                    id: id,
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            ).then((res) => {
+                setIdError(res.data);
+            });
         } catch (error) {
             alert('서버 오류입니다. 관리자에게 문의하세요.');
             console.error(error);
