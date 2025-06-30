@@ -1,3 +1,23 @@
 .idAvailable {
     color: red;
 }
+
+.grid-error {
+    border: 2px solid red; /* 빨간 테두리 */
+    border-radius: 4px;    /* 모서리 둥글게 */
+    padding: 8px;
+}
+
+/* Singup.css */
+.MuiInputLabel-root {
+    text-transform: none
+}
+
+/* Singup.css */
+.textfield-error .MuiOutlinedInput-notchedOutline {
+    border-color: red !important;
+}
+
+.textfield-normal .MuiOutlinedInput-notchedOutline {
+    border-color: #ccc; /* 기본 테두리 색상 */
+}

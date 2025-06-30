@@ -53,7 +53,7 @@ const Signup = () => {
     const idCheckHandler = async (id) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (id === '') {
-            setIdError('아이디를 입력해주세요.');
+            setIdError('이메일을 입력해주세요.');
             setIsIdAvailable(false);
             return false;
         } else if (!emailRegex.test(id)) {
@@ -104,13 +104,20 @@ const Signup = () => {
                                 <Grid item xs={12}>
                                     <TextField
                                         required
-                                        autoFocus
                                         fullWidth
                                         type="email"
                                         id="email"
                                         name="email"
                                         label="이메일 주소"
                                         onChange={onChangeIdHandler}
+                                        helperText={idError || ' '}
+                                        error={!!idError}
+                                        InputProps={{
+                                            style: {
+                                                borderColor: idError ? 'red' : '', // 에러 시 빨간 테두리
+                                                borderWidth: idError ? '2px' : '', // 에러 시 추가 테두리 두께
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 {idError && <small style={{marginLeft:'17px', marginTop:'5px'}} className={isIdAvailable ? '' : 'idAvailable'}>{idError}</small>}
@@ -132,6 +139,11 @@ const Signup = () => {
                                         id="rePassword"
                                         name="rePassword"
                                         label="비밀번호 재입력"
+                                        InputLabelProps={{
+                                            style: {
+                                                textTransform: "none", // 텍스트 변환 방지
+                                            },
+                                        }}
                                     />
                                 </Grid>
                                 <Grid item xs={12}>

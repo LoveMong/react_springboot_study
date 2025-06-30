@@ -18,6 +18,11 @@ public class MemberServiceImpl implements MemberService {
 
 
     @Override
+    public Boolean checkDuplicateMemberId(String memberId) {
+        return null;
+    }
+
+    @Override
     public String memberCountById(String memberId) {
         int membeExistCnt = memberMapper.memberCountById(memberId);
         if(membeExistCnt > 0) {
